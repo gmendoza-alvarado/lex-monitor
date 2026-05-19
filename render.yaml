@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: acuerdos-monitor-sqlite
+    env: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: TELEGRAM_ENABLED
+        value: "true"
+      - key: TELEGRAM_BOT_TOKEN
+        value: "8250681484:AAFs3LvSookCYDkl0qrNh1Ini_DzzJeqXvk"
+      - key: TELEGRAM_CHAT_ID
+        value: "6267702178"
+      - key: SQLITE_DB_PATH
+        value: /app/data/acuerdos.db
