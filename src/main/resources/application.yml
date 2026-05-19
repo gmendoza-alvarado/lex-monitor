@@ -13,7 +13,7 @@ server:
 
 monitor:
   enabled: true
-  cron: "0 30 15 * * MON-FRI"
+  cron: "0 55 15 * * MON-FRI"
   zone: America/Mexico_City
   juzgados:
     - clave: 1RG
