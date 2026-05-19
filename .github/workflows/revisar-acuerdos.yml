@@ -1,0 +1,17 @@
+name: Revisar acuerdos TSJ
+
+on:
+  schedule:
+    # 3:30 PM hora México = 21:30 UTC si estás en UTC-6
+    - cron: "30 21 * * 1-5"
+
+  workflow_dispatch:
+
+jobs:
+  revisar-acuerdos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Llamar endpoint de revisión
+        run: |
+          curl -X GET "${{ secrets.RENDER_MONITOR_URL }}"
