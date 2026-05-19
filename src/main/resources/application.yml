@@ -2,7 +2,7 @@ spring:
   application:
     name: acuerdos-monitor-sqlite
   datasource:
-    url: jdbc:sqlite:${SQLITE_DB_PATH:./data/acuerdos.db}
+    url: ${SQLITE_JDBC_URL:jdbc:sqlite:./data/acuerdos.db}
     driver-class-name: org.sqlite.JDBC
   flyway:
     enabled: true
