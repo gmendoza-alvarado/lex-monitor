@@ -2,7 +2,6 @@ name: Revisar acuerdos TSJ
 
 on:
   schedule:
-    # 3:30 PM hora MÃ©xico = 21:30 UTC si estÃ¡s en UTC-6
     - cron: "30 21 * * 1-5"
 
   workflow_dispatch:
@@ -12,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Llamar endpoint de revisiÃ³n
+      - name: Llamar endpoint de revisión
         run: |
-          curl -X GET "${{ secrets.RENDER_MONITOR_URL }}"
+          echo "Ejecutando revisión de acuerdos..."
+          curl --fail --show-error --location --max-time 120 -X GET "${{ secrets.RENDER_MONITOR_URL }}"
